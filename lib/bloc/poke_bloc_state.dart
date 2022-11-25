@@ -22,3 +22,16 @@ class PokeBlocError extends PokeBlocState {
   @override
   List<Object?> get props => [error.toString()];
 }
+/*
+Color colors;
+setState(() {
+if (${pokeList[index].type} == 'grass'
+color = Colors.green;
+}
+else if(${pokeList[index].type} == 'fire'){
+color = Colors.red;
+} else {
+color = Colors.blue;
+}
+});
+*/

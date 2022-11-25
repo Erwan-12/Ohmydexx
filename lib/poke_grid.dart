@@ -41,8 +41,17 @@ class PokeGrid extends StatelessWidget {
                         children: [
                           Expanded(
                               child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
+                                /*setState(() {
+                                  if(${pokeList[index].type[0]} == 'grass'){color = Colors.green;
+                                  }
+                                  else if(${pokeList[index].type[0]} == 'fire'){
+                                    color = Colors.red;
+                                  } else if(${pokeList[index].type[0]} == 'water') {
+                                    color = Colors.blue;
+                                  }
+                                });*/
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
                                     Text('${pokeList[index].name}'),
                                     Text('${pokeList[index].number}'),
                                   ]
@@ -52,7 +61,7 @@ class PokeGrid extends StatelessWidget {
                               child: Column(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: const [
-                                    Text("Tap to see more"),
+                                    Text("tap to see more"),
                                   ]
                               )
                           ),
