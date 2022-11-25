@@ -16,7 +16,7 @@ class PokeGrid extends StatelessWidget {
       itemCount: pokeList.length,
       scrollDirection: Axis.vertical,
       gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
+          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
       itemBuilder: (context, index) {
         return GestureDetector(
           onTap: () {
@@ -34,6 +34,7 @@ class PokeGrid extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
+                Text('${pokeList[index].number}'),
                 Container(
                   height: 5,
                   decoration: BoxDecoration(
@@ -42,7 +43,7 @@ class PokeGrid extends StatelessWidget {
                     ),
                   ),
                 ),
-                Text("${pokeList[index].number}"),
+                Text("${pokeList[index].name}"),
               ],
             ),
           ),

@@ -24,5 +24,6 @@ dev_dependencies:
     sdk: flutter
 
 flutter:
-
+  assets:
+    - pokedex.json
   uses-material-design: true

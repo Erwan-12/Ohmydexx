@@ -11,10 +11,10 @@ class Pokemon {
   Pokemon.fromJson(Map<String, dynamic> json) {
     name = json['name'];
     number = json['number'];
-    thumbnailImage = json['ThumbnaiImage'];
+    thumbnailImage = json['ThumbnailImage'];
     type = List<String>.from(json['type']);
-    abilities = List<String>.from(json['abilitie']);
-    weakness = List<String>.from(json['weaknes']);
+    abilities = List<String>.from(json['abilities']);
+    weakness = List<String>.from(json['weakness']);
     height = json['height'];
     weight = json['weight'];
   }
