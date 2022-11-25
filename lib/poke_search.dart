@@ -7,7 +7,10 @@ class SearchPokemon extends StatelessWidget {
   const SearchPokemon({
     Key? key,
     required this.pokeList,
+    this.margin = const EdgeInsets.symmetric(horizontal: 28),
   }) : super(key: key);
+
+  final EdgeInsets margin;
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +18,32 @@ class SearchPokemon extends StatelessWidget {
       appBar: AppBar(
         title: Text("Search"),
         actions: [
-          Padding(
+          Container(
             padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.search),
+            margin: margin,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Expanded(
+                child: TextFormField(
+                    decoration: const InputDecoration(
+                      isDense: true,
+                      hintText: 'Search Pokemon, Move, Ability etc',
+                      contentPadding: EdgeInsets.zero,
+                      hintStyle: TextStyle(
+                        fontSize: 14,
+                        // color: AppColors.grey,
+                        height: 1,
+                      ),
+                      border: InputBorder.none,
+                    )
+                ),
+              )
+
+              ],
             ),
+
           )
         ],
       ),
