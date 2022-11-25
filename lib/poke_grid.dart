@@ -13,45 +13,55 @@ class PokeGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      itemCount: pokeList.length,
-      scrollDirection: Axis.vertical,
-      gridDelegate:
-          const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-      itemBuilder: (context, index) {
-        return GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => DetailPokemon(
-                  pokemon: pokeList[index],
+        itemCount: pokeList.length,
+        scrollDirection: Axis.vertical,
+        gridDelegate:
+        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        itemBuilder: (context, index) {
+          return GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPokemon(
+                      pokemon: pokeList[index],
+                    ),
+                  ),
+                );
+              },
+              child: Card(
+                elevation: 8,
+                child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: NetworkImage("${pokeList[index].thumbnailImage}"),
+                      ),
+                    ),
+                    child: Column(
+                        children: [
+                          Expanded(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text('${pokeList[index].name}'),
+                                    Text('${pokeList[index].number}'),
+                                  ]
+                              )
+                          ),
+                          Expanded(
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: const [
+                                    Text("Tap to see more"),
+                                  ]
+                              )
+                          ),
+                        ]
+                    )
                 ),
-              ),
-            );
-          },
-          child: Card(
-            elevation: 8,
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage("${pokeList[index].thumbnailImage}"),
-                ),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text('${pokeList[index].name}'),
-                  Text('${pokeList[index].number}'),
-                ],
-              ),
-
-
-
-            )
-
-          ),
-        );
-      },
+              )
+          );
+        }
     );
   }
 }
