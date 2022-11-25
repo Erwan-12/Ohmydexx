@@ -31,21 +31,24 @@ class PokeGrid extends StatelessWidget {
           },
           child: Card(
             elevation: 8,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text('${pokeList[index].number}'),
-                Container(
-                  height: 5,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("${pokeList[index].thumbnailImage}"),
-                    ),
-                  ),
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage("${pokeList[index].thumbnailImage}"),
                 ),
-                Text("${pokeList[index].name}"),
-              ],
-            ),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text('${pokeList[index].name}'),
+                  Text('${pokeList[index].number}'),
+                ],
+              ),
+
+
+
+            )
+
           ),
         );
       },
